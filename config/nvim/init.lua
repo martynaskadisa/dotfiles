@@ -906,6 +906,17 @@ require("lazy").setup({
 	{
 		"ThePrimeagen/vim-be-good",
 	},
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+			"nvim-telescope/telescope.nvim",
+			"ibhagwan/fzf-lua",
+			"echasnovski/mini.pick",
+		},
+		config = true,
+	},
 
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
