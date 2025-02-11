@@ -928,7 +928,7 @@ require("lazy").setup({
 				":Telescope git_branches<CR>",
 				{ silent = true, desc = "Show [G]it [b]ranches" }
 			)
-			vim.keymap.set("n", "<leader>gB", ":Neogit blame<CR>", { silent = true, desc = "[G]it [B]lame" })
+			vim.keymap.set("n", "<leader>gB", ":G blame<CR>", { silent = true, desc = "[G]it [B]lame" })
 		end,
 	},
 	{
