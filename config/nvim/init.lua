@@ -915,7 +915,44 @@ require("lazy").setup({
 			"ibhagwan/fzf-lua",
 			"echasnovski/mini.pick",
 		},
-		config = true,
+		config = function()
+			local neogit = require("neogit")
+
+			vim.keymap.set("n", "<leader>gs", neogit.open, { silent = true, desc = "[S]how Neogit" })
+			vim.keymap.set("n", "<leader>gc", ":Neogit commit<CR>", { silent = true, desc = "[G]it [C]ommit" })
+			vim.keymap.set("n", "<leader>gp", ":Neogit pull<CR>", { silent = true, desc = "[G]it [p]ull" })
+			vim.keymap.set("n", "<leader>gP", ":Neogit push<CR>", { silent = true, desc = "[G]it [P]ush" })
+			vim.keymap.set(
+				"n",
+				"<leader>gb",
+				":Telescope git_branches<CR>",
+				{ silent = true, desc = "Show [G]it [b]ranches" }
+			)
+			vim.keymap.set("n", "<leader>gB", ":Neogit blame<CR>", { silent = true, desc = "[G]it [B]lame" })
+		end,
+	},
+	{
+		"almo7aya/openingh.nvim",
+		config = function()
+			vim.keymap.set(
+				"n",
+				"<leader>gr",
+				":OpenInGHRepo <CR>",
+				{ silent = true, desc = "Open [G]itHub [R]epo in browser" }
+			)
+			vim.keymap.set(
+				"n",
+				"<leader>gf",
+				":OpenInGHFile <CR>",
+				{ silent = true, desc = "Open [G]itHub [F]ile in browser" }
+			)
+			vim.keymap.set(
+				"v",
+				"<leader>gf",
+				":OpenInGHFileLines <CR>",
+				{ silent = true, desc = "Open selected lines in [G]itHub [F]ile" }
+			)
+		end,
 	},
 
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
