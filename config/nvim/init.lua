@@ -955,6 +955,20 @@ require("lazy").setup({
 		end,
 	},
 
+	{
+		"mistricky/codesnap.nvim",
+		build = "make",
+		keys = {
+			{ "<leader>cc", "<cmd>CodeSnap<cr>", mode = "x", desc = "[C]opy [C]ode screenshot" },
+		},
+		opts = {
+			watermark = "",
+			bg_x_padding = 16,
+			bg_y_padding = 16,
+			mac_window_bar = false,
+		},
+	},
+
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
 	-- place them in the correct locations.
